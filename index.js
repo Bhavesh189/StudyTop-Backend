@@ -6,6 +6,11 @@ const dotenv = require('dotenv');
 const connectDB = require('./config/db.js');
 const userRoutes = require('./routes/userRoutes.js');
 const courseRoutes = require('./routes/courseRoutes.js');
+const fs = require('fs');
+
+if (!fs.existsSync('./uploads')) {
+    fs.mkdirSync('./uploads');
+}
 
 dotenv.config();
 
