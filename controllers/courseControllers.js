@@ -41,14 +41,14 @@ const getCourse = async (req, res) => {
 
 const d = async (req, res) => {
     try {
-        const data = await jwt.verify(req.cookies.token, 's');
+        // const data = await jwt.verify(req.cookies.token, 's');
 
-        if (!data) return res.status(401).json({ "a": "n" });
+        // if (!data) return res.status(401).json({ "a": "n" });
 
-        const x = await userModel.findOne({ _id: data.id });
-        const email = x.email;
+        // const x = await userModel.findOne({ _id: data.id });
+        // const email = x.email;
 
-        if (email !== "bs@bs.com") return res.status(403).json({ "a": "n" });
+        // if (email !== "bs@bs.com") return res.status(403).json({ "a": "n" });
 
         await courseModel.deleteOne({ name: req.params.name });
         res.status(200).send("Deleted");
