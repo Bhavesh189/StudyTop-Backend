@@ -27,6 +27,6 @@ app.use('/', userRoutes)
 app.use('/', courseRoutes)
 
 
-app.listen(3000, ()=> {
+app.listen(process.env.PORT || 3000, ()=> {
     console.log("SErver running on port 3000")
 });
