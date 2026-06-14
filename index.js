@@ -19,10 +19,12 @@ const app = express();
 
 connectDB();
 
-app.use(cors({
-    origin: "http://localhost:5173",
-    credentials: true
-}));
+const corsOptions = {
+  origin: ["https://study-top.vercel.app", "http://localhost:5173"],
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
