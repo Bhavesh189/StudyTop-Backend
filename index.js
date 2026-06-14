@@ -7,6 +7,7 @@ const connectDB = require('./config/db.js');
 const userRoutes = require('./routes/userRoutes.js');
 const courseRoutes = require('./routes/courseRoutes.js');
 const fs = require('fs');
+const certRoutes = require('./routes/certRoutes.js')
 
 if (!fs.existsSync('./uploads')) {
     fs.mkdirSync('./uploads');
@@ -30,6 +31,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use('/', userRoutes);
 app.use('/', courseRoutes);
+app.use('/', certRoutes)
 
 const PORT = process.env.PORT || 3000;
 
