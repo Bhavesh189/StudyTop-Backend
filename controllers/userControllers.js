@@ -118,6 +118,15 @@ const logout = async (req, res) => {
   }
 };
 
+const getAll = async (req, res) => {
+  try {
+    const ress = await userModel.find();
+    res.status(200).json(ress);
+  } catch (e) {
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+}
+
 module.exports = {
   getUsers,
   create,
@@ -125,4 +134,5 @@ module.exports = {
   checkUser,
   getName,
   logout,
+  getAll
 };
